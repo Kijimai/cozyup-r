@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: linear-gradient(
+    0deg,
+    hsl(var(--clr-black)) 0% 5%,
+    hsl(var(--clr-purple)) 75% 100%
+  );
+}
