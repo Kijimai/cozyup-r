@@ -13,14 +13,14 @@ const Navigator = () => {
     <NavWrapper>
       <nav>
         <ul>
-          <li>
+          <li className="site-name">
             <NavLink to="/">Cozy Up</NavLink>
           </li>
           {navLinks.map((link, idx) => {
             const { url, name } = link
 
             return (
-              <li key={idx}>
+              <li className="link-item" key={idx}>
                 <NavLink
                   style={({ isActive }) => {
                     return {
@@ -41,9 +41,18 @@ const Navigator = () => {
 }
 
 const NavWrapper = styled.header`
+  padding: 2rem;
+  background-color: hsl(var(--clr-black) / 0.7);
+
   nav {
     ul {
-      display: none;
+      .site-name {
+        font-size: 3rem;
+      }
+
+      .link-item {
+        display: none;
+      }
     }
   }
 
@@ -51,8 +60,18 @@ const NavWrapper = styled.header`
     nav {
       ul {
         display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 1.8rem;
         gap: 2rem;
+
+        .site-name {
+          margin-right: auto;
+        }
+
+        .link-item {
+          display: block;
+        }
 
         a {
           color: hsl(var(--clr-white));
