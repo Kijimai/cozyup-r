@@ -1,9 +1,14 @@
-import React from 'react'
+import styled from "styled-components"
 
 const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
+  return <FooterWrapper>
+    
+  </FooterWrapper>
 }
+
+const FooterWrapper = styled.footer`
+  background-color: hsl(var(--clr-black));
+  padding: 2rem;
+`
 
 export default Footer
