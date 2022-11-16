@@ -1,7 +1,9 @@
 :root {
   --clr-white: 0 0% 100%;
   --clr-black: 0 0% 0%;
+
   --clr-purple: 294 94% 39%;
+  --clr-yellow: 58 90% 47%;
 }
 
 html {
@@ -16,7 +18,6 @@ html {
   padding: 0;
   box-sizing: inherit;
 }
-
 
 body {
   min-height: 100vh;
@@ -34,4 +35,8 @@ main {
 
 ul {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }

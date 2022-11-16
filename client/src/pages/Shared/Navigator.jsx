@@ -1,14 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { GiHamburgerMenu } from "react-icons/gi"
 import { NavLink } from "react-router-dom"
-const navLinks = [
-  { url: "/", name: "home" },
-  { url: "movies", name: "movies" },
-  { url: "tv", name: "tv shows" },
-  { url: "random", name: "surprise me" },
-]
-
+import { navLinks } from "../../utils/links"
+import { useGlobalContext } from "../../utils/context"
 const Navigator = () => {
+  const { showSidebar } = useGlobalContext()
+
   return (
     <NavWrapper>
       <nav>
@@ -22,9 +20,12 @@ const Navigator = () => {
             return (
               <li className="link-item" key={idx}>
                 <NavLink
+                  end
                   style={({ isActive }) => {
                     return {
-                      color: isActive ? "yellow" : "green",
+                      color: isActive
+                        ? "hsl(var(--clr-yellow))"
+                        : "hsl(var(--clr-white))",
                     }
                   }}
                   to={`${url}`}
@@ -34,6 +35,11 @@ const Navigator = () => {
               </li>
             )
           })}
+          <li className="menu">
+            <button onClick={showSidebar}>
+              <GiHamburgerMenu />
+            </button>
+          </li>
         </ul>
       </nav>
     </NavWrapper>
@@ -41,17 +47,45 @@ const Navigator = () => {
 }
 
 const NavWrapper = styled.header`
-  padding: 2rem;
+  padding: 2rem 4rem;
   background-color: hsl(var(--clr-black) / 0.7);
 
   nav {
+    max-width: 111rem;
+    margin: 0 auto;
+
     ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
       .site-name {
         font-size: 3rem;
+
+        a {
+          color: hsl(var(--clr-white));
+          text-decoration: none;
+          font-family: "Lobster", sans-serif;
+        }
       }
 
       .link-item {
         display: none;
+      }
+
+      .menu {
+        display: block;
+
+        button {
+          background-color: transparent;
+          border: none;
+
+          svg {
+            height: 4rem;
+            width: 4rem;
+            fill: hsl(var(--clr-white));
+          }
+        }
       }
     }
   }
@@ -59,8 +93,6 @@ const NavWrapper = styled.header`
   @media screen and (min-width: 768px) {
     nav {
       ul {
-        display: flex;
-        align-items: center;
         justify-content: center;
         font-size: 1.8rem;
         gap: 2rem;
@@ -77,6 +109,10 @@ const NavWrapper = styled.header`
           color: hsl(var(--clr-white));
           text-decoration: none;
           text-transform: capitalize;
+        }
+
+        .menu {
+          display: none;
         }
       }
     }

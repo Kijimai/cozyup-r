@@ -8,6 +8,7 @@ import React, {
 } from "react"
 import axios from "axios"
 import { reducer } from "./reducer"
+import { SHOW_SIDEBAR, CLOSE_SIDEBAR, GET_MOVIES } from "./actions"
 
 const tmdbURL = "https://api.themoviedb.org/3/trending/"
 
@@ -22,10 +23,7 @@ const AppContext = createContext()
 
 const defaultState = {
   movies: [],
-}
-
-const ACTIONS = {
-  GET_MOVIES: "GET_MOVIES",
+  showSidebar: false,
 }
 
 const AppProvider = ({ children }) => {
@@ -38,14 +36,24 @@ const AppProvider = ({ children }) => {
           api_key: process.env.REACT_APP_TMDB_KEY,
         },
       })
-      dispatch({ type: ACTIONS.GET_MOVIES, payload: data })
+      dispatch({ type: GET_MOVIES, payload: data })
     } catch (error) {
       console.log(error.response)
     }
   }
 
+  const showSidebar = () => {
+    dispatch({ type: SHOW_SIDEBAR })
+  }
+
+  const closeSidebar = () => {
+    dispatch({ type: CLOSE_SIDEBAR })
+  }
+
   return (
-    <AppContext.Provider value={{ state, fetchMovies }}>
+    <AppContext.Provider
+      value={{ ...state, fetchMovies, showSidebar, closeSidebar }}
+    >
       {children}
     </AppContext.Provider>
   )
