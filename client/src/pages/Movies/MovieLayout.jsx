@@ -1,9 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const MovieLayout = () => {
   return (
-    <div>MovieLayout</div>
+    <main>MovieLayout</main>
   )
 }
+
+
 
 export default MovieLayout

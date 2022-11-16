@@ -2,9 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 const Home = (props) => {
-  return <div>
-    
-  </div>
+  return <main>Home Element</main>
 }
 
 Home.propTypes = {}

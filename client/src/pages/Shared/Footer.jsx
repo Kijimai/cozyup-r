@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Footer = () => {
   return <FooterWrapper>
-    
+    Footer
   </FooterWrapper>
 }
 

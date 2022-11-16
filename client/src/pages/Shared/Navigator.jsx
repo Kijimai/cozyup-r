@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 const navLinks = [
-  { url: "home", name: "home" },
+  { url: "/", name: "home" },
   { url: "movies", name: "movies" },
   { url: "tv", name: "tv shows" },
   { url: "random", name: "surprise me" },
