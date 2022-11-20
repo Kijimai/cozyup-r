@@ -1,3 +1,6 @@
 export const SHOW_SIDEBAR = "SHOW_SIDEBAR"
 export const CLOSE_SIDEBAR = "CLOSE_SIDEBAR"
 export const GET_MOVIES = "GET_MOVIES"
+export const GET_MOVIES_ERROR = "GET_MOVIES_ERROR"
+export const GET_TV_SHOWS = "GET_TV_SHOWS"
+export const GET_TV_SHOWS_ERROR = "GET_TV_SHOWS_ERROR"

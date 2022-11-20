@@ -8,7 +8,14 @@ import React, {
 } from "react"
 import axios from "axios"
 import { reducer } from "./reducer"
-import { SHOW_SIDEBAR, CLOSE_SIDEBAR, GET_MOVIES } from "./actions"
+import {
+  SHOW_SIDEBAR,
+  CLOSE_SIDEBAR,
+  GET_MOVIES,
+  GET_TV_SHOWS,
+  GET_MOVIES_ERROR,
+  GET_TV_SHOWS_ERROR,
+} from "./actions"
 
 const tmdbURL = "https://api.themoviedb.org/3/trending/"
 
@@ -23,6 +30,7 @@ const AppContext = createContext()
 
 const defaultState = {
   movies: [],
+  tvShows: [],
   showSidebar: false,
 }
 
@@ -39,6 +47,13 @@ const AppProvider = ({ children }) => {
       dispatch({ type: GET_MOVIES, payload: data })
     } catch (error) {
       console.log(error.response)
+    }
+  }
+
+  const fetchTVShows = async () => {
+    try {
+    } catch (err) {
+      console.log(err.response)
     }
   }
 
