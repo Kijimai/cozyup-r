@@ -1,7 +1,14 @@
-import React from "react"
+import { useEffect } from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
-const Home = (props) => {
+import { useGlobalContext } from "../../utils/context"
+const Home = () => {
+  const { trendingWeekly, fetchWeeklyTrending } = useGlobalContext()
+
+  useEffect(() => {
+    fetchWeeklyTrending()
+  }, [])
+
   return <main>Home Element</main>
 }
 
