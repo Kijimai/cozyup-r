@@ -1,12 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import { Outlet } from "react-router-dom"
+import styled from "styled-components"
 
 const MovieLayout = () => {
   return (
-    <main>MovieLayout</main>
+    <main>
+      <Outlet />
+    </main>
   )
 }
-
-
 
 export default MovieLayout
