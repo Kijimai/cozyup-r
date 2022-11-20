@@ -67,7 +67,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ ...state, fetchMovies, showSidebar, closeSidebar }}
+      value={{ ...state, fetchMovies, fetchTVShows, showSidebar, closeSidebar }}
     >
       {children}
     </AppContext.Provider>
