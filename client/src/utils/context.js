@@ -28,7 +28,6 @@ const axiosMDB = axios.create({
   baseURL: tmdbURL,
   headers: {
     "Content-Type": "application/json;charset=utf-8",
-    Authorization: `Bearer ${process.env.REACT_APP_TMDB_KEY}`,
   },
 })
 
@@ -73,7 +72,7 @@ const AppProvider = ({ children }) => {
       )
       console.log(data)
 
-      dispatch({ type: GET_TRENDING_WEEKLY, payload: data })
+      dispatch({ type: GET_TRENDING_WEEKLY, payload: data.results })
     } catch (err) {
       console.log(err.response)
       dispatch({ type: GET_TRENDING_WEEKLY_ERROR })
