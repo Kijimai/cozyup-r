@@ -1,17 +1,26 @@
 import { useEffect } from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import { useGlobalContext } from "../../utils/context"
+import MediaCard from "../../components/MediaCard"
+
 const Home = () => {
   const { trendingWeekly, fetchWeeklyTrending } = useGlobalContext()
 
   useEffect(() => {
-    fetchWeeklyTrending()
+    // fetchWeeklyTrending()
   }, [])
 
-  return <main>Home Element</main>
+  return (
+    <main>
+      <MainWrapper>
+
+      </MainWrapper>Home Element
+    </main>
+  )
 }
 
-Home.propTypes = {}
+const MainWrapper = styled.section``
 
 export default Home

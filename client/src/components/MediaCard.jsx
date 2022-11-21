@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const baseUrl = "https://image.tmdb.org/t/p/w500"
 
-const MovieCard = ({
+const MediaCard = ({
   genre_ids,
   id,
   media_type,
@@ -12,16 +12,17 @@ const MovieCard = ({
   release_date,
   title,
   poster_path,
-  original_language,
   vote_average,
   vote_count,
 }) => {
-  return <div>MovieCard</div>
+  return <CardWrapper>MediaCard</CardWrapper>
 }
 
-const CardWrapper = styled.article``
+const CardWrapper = styled.article`
+  
+`
 
-export default MovieCard
+export default MediaCard
 
 // {
 //     "adult": false,

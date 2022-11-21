@@ -36,6 +36,8 @@ const AppContext = createContext()
 const defaultState = {
   movies: [],
   tvShows: [],
+  currentMovie: {},
+  currentTvShow: {},
   trendingWeekly: [],
   isLoading: false,
   showSidebar: false,
